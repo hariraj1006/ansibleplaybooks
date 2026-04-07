@@ -1,0 +1,18 @@
+---
+- name: creating multiple users 
+  hosts: all
+  tasks: 
+   - name: users
+     user: 
+      name: ramu
+      password: 1234853
+     user:
+       name: srujan
+       state: absent
+   - name: downloading git
+     apt:
+      name: git
+      state: present
+      update_cache: yes     
+...
+

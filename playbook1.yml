@@ -1,0 +1,14 @@
+---
+- name: creating users
+  hosts: all
+  tasks:
+   - name: user creation
+     user:
+      name: raj
+      password: 13485382
+
+
+
+
+
+...
