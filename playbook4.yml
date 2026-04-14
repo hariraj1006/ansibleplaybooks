@@ -1,0 +1,17 @@
+---
+- name: fetching file from server2 to contoller
+  hosts: 13.217.220.52
+  tasks:
+    - name: fetching from server2 to controller
+      fetch:
+        src: file7
+        dest: /tmp
+- name: coping to controller to server1
+  hosts: 44.200.147.111
+  tasks:
+    - name: cpoing file
+      copy:
+        src: /tmp/13.217.220.52/file7
+        dest: /tmp
+
+...

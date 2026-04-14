@@ -1,0 +1,20 @@
+---
+- name: create a user and clone a repo to the user dir and change permissions 
+  hosts: all
+   
+  become: yes 
+  tasks:
+    - name: crating a user
+      user:
+        name: shiva 
+        password: hari
+        home: /tmp/shiva
+    - name: cloning a git repo
+      git:
+        repo: https://github.com/IntelliqDevops/ansibleplaybook.git
+        dest: /tmp/shiva/git
+    - name: chnaging the permissions 
+      file:
+        name: /tmp/shiva/git
+        mode: 777
+...
