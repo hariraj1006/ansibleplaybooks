@@ -1,0 +1,12 @@
+---
+- name: implementing host scope variables on group of servers 
+  hosts: webapps
+  tasks:
+    - name: creating users using hosts scope variables
+      user:
+        name: "{{a}}"
+        password: "{{b}}"
+        uid: "{{c}}"
+        comment: "{{e}}"
+        home: "{{f}}"
+...

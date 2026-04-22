@@ -1,0 +1,14 @@
+---
+- name: implementing playscope variables
+  hosts: all 
+  vars:
+    a: git
+    b: present
+    c: yes
+  tasks: 
+    - name: installing s/w's
+      apt: 
+       name: "{{a}}"
+       state: "{{b}}"
+       update_cache: "{{c}}"
+... 

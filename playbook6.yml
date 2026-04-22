@@ -1,0 +1,11 @@
+---
+- name: implementing global varibles
+  hosts: all
+  tasks: 
+   - name: creating users using vars
+     user:
+       name: "{{a}}"
+       password: "{{b}}"
+       home: "{{c}}"
+...
+
