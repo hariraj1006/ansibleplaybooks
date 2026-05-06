@@ -1,0 +1,22 @@
+---
+- name: implementing tags
+  hosts: all 
+  tasks: 
+     - name: istalling apache
+       apt: 
+
+          name: apache2
+          state: present
+          update_cache: yes
+       tags: install
+     - name: start apache
+       service:
+          name: apache2
+          state: started
+       tags: always
+     - name: del apache
+       apt: 
+           name: apache2
+           state: absent
+       tags: never
+...

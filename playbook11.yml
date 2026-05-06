@@ -1,0 +1,12 @@
+- name: implementing loops
+  hosts: all 
+  tasks: 
+     - name: creating multiple users using loops
+       user: 
+          name: "{{item.name}}"
+          password: "{{item.passwd}}"
+       with_items: 
+          - {name: hariraj,passwd: hari}
+          - {name: rajesh,passwd: raaju}
+          - {name: azam,passwd: azam}
+...
