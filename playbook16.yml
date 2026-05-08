@@ -1,0 +1,17 @@
+---
+- name: implementing when condition 
+  hosts: all 
+  tasks: 
+    - name: capture file info 
+      stat: 
+        path: /tmp/file2
+      register: info
+    - name: display the output of above module
+      debug: 
+       var: info
+    - name: del if file1 is executable
+      file: 
+         name: /tmp/file2
+         state: absent
+      when: info.stat.executable == true
+...

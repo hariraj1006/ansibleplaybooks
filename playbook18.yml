@@ -1,0 +1,16 @@
+---
+- name: Error Handling or Exception Handling
+  hosts: all
+  tasks:
+    - block:
+       - name: user creation 
+         user:
+           names: hari
+           password: hari
+           
+      rescue:
+        - name: user creation
+          user:
+            name: bhanu
+            password: bhanu
+...

@@ -1,0 +1,16 @@
+---
+- name: implementing error handling in ansible 
+  hosts: all 
+  tasks: 
+     - block:
+        - name: installing git using yum 
+          yum: 
+             name: git
+             state: present
+       rescue: 
+         - name: installing git using apt
+           apt:
+              name: git 
+              state: present
+...
+

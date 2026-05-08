@@ -1,0 +1,22 @@
+--- 
+- name: implementing handlers 
+  hosts: all 
+  tasks: 
+     - name: installapache
+       apt:
+          name: apache2
+          state: present
+          update_cache: yes
+
+     - name: editing default homepage of apache
+       copy: 
+          content: hello im thella hariraj the devops engineer
+          dest: /var/www/html/index.html
+
+       notify: restart apache
+  handlers: 
+     - name: restart apache
+       service: 
+          name: apache2
+          state: restarted
+...

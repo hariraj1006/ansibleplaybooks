@@ -1,0 +1,7 @@
+---
+- name: edit apache
+  copy:
+     content: hello 
+     dest: /var/www/html/index.html
+...
+

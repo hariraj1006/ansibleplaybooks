@@ -1,0 +1,9 @@
+--- 
+- name: checking response
+  uri:
+     url: "{{item}}"
+     status_code: 200
+  loop:
+    - http://100.53.200.13
+    - http://3.239.120.176
+...

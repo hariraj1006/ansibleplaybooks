@@ -1,0 +1,12 @@
+---
+- name: calling multiple child playbooks
+  hosts: all
+  tasks: 
+     - name: call playbooks
+       include_tasks: "{{item}}"
+       loop: 
+          - install.yml
+          - edit.yml
+          - restart.yml
+          - check_response.yml
+...
